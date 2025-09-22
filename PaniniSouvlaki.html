@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PANINI SOUVLAKI – Souvlaki & Panini in Höchstadt</title>
+  <meta name="description" content="Genieße frisches Souvlaki und Panini in Höchstadt. Spezialitäten, Öffnungszeiten, Kontakt und Galerie – PANINI SOUVLAKI." />
+  <meta name="keywords" content="Souvlaki, Panini, Höchstadt, griechisches Essen, Restaurant, Öffnungszeiten, Menü, Kontakt" />
+  <meta name="author" content="PANINI SOUVLAKI" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #2f2f2f;
+      color: #d97f00;
+      line-height: 1.6;
+    }
+    .top-address {
+      background-color: #d97f00;
+      color: #2f2f2f;
+      text-align: center;
+      font-weight: 900;
+      font-size: 2rem;
+      padding: 15px 10px;
+      letter-spacing: 2px;
+      user-select: none;
+      box-shadow: 0 3px 8px rgba(217,127,0,0.6);
+    }
+    header {
+      background-color: #d97f00;
+      color: #2f2f2f;
+      padding: 20px 20px;
+      text-align: center;
+      text-transform: uppercase;
+      font-weight: 900;
+      font-size: 2.8rem;
+      letter-spacing: 3px;
+      user-select: none;
+      box-shadow: 0 4px 10px rgba(217,127,0,0.4);
+    }
+    .gallery-wrapper {
+      position: relative;
+      max-width: 900px;
+      margin: 20px auto 40px;
+      padding: 0 20px;
+    }
+    .media-gallery {
+      overflow-x: auto;
+      display: flex;
+      gap: 25px;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+    }
+    .gallery-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 2;
+      background: #d97f00;
+      color: #2f2f2f;
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      font-size: 2rem;
+      cursor: pointer;
+      opacity: 0.85;
+      transition: opacity 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .gallery-arrow.left {
+      left: -20px;
+    }
+    .gallery-arrow.right {
+      right: -20px;
+    }
+    .gallery-arrow:hover {
+      opacity: 1;
+    }
+    .media-item {
+      flex: 0 0 auto;
+      width: 280px;
+      border: 2px solid #d97f00;
+      border-radius: 8px;
+      background-color: #3f3f3f;
+      box-shadow: 0 0 10px rgba(217,127,0,0.3);
+      overflow: hidden;
+    }
+    .media-item img,
+    .media-item video {
+      width: 120%;
+      height: 235px;
+      object-fit: cover;
+      display: block;
+      border-bottom: 2px solid #d97f00;
+    }
+    .media-caption {
+      padding: 10px;
+      font-weight: 600;
+      color: #ffb74d;
+      text-align: center;
+    }
+    main {
+      max-width: 900px;
+      margin: 0 auto 50px;
+      padding: 0 20px;
+      background-color: #3f3f3f;
+      border-radius: 8px;
+      box-shadow: 0 0 15px rgba(217,127,0,0.3);
+      border: 2px solid #d97f00;
+    }
+    h1, h2 {
+      border-bottom: 2px solid #d97f00;
+      padding-bottom: 6px;
+      margin-bottom: 20px;
+      color: #ffb74d;
+    }
+    .menu-section, .contact-section {
+      margin-bottom: 40px;
+      
+    }
+    .menu-item {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid #555;
+      padding: 12px 0;
+      font-size: 1.2rem;
+      color: #e6a43c;
+    }
+    .menu-item:last-child {
+      border-bottom: none;
+    }
+    .timetable-container {
+      max-width: 900px;
+      margin: 0 auto 60px;
+      background-color: #3f3f3f;
+      padding: 20px;
+      border: 2px solid #d97f00;
+      border-radius: 8px;
+      overflow-x: auto;
+      box-shadow: 0 0 15px rgba(217,127,0,0.3);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      color: #d97f00;
+      min-width: 600px;
+    }
+    th, td {
+      border: 1px solid #d97f00;
+      padding: 10px 15px;
+      text-align: center;
+      font-weight: 600;
+    }
+    th {
+      background-color: #553700;
+      text-transform: uppercase;
+      font-size: 1.1rem;
+      color: #ffb74d;
+    }
+    @media (max-width: 900px) {
+      main, .timetable-container, .gallery-wrapper, .contact-section {
+        max-width: 100%;
+        padding: 0 5px;
+      }
+      .media-gallery {
+        gap: 8px;
+      }
+    }
+    @media (max-width: 600px) {
+      .top-address {
+        font-size: 1.6rem;
+        padding: 12px 10px;
+      }
+      header {
+        font-size: 2rem;
+        letter-spacing: 2px;
+        padding: 15px 10px;
+      }
+      .menu-item {
+        font-size: 1rem;
+      }
+      table {
+        min-width: 400px;
+        font-size: 0.95rem;
+      }
+      .media-item {
+        width: 180px;
+      }
+      .media-item img,
+      .media-item video {
+        height: 100px;
+      }
+      .gallery-arrow {
+        width: 32px;
+        height: 32px;
+        font-size: 1.5rem;
+      }
+    }
+    @media (max-width: 400px) {
+      .media-item {
+        width: 120px;
+      }
+      .media-item img,
+      .media-item video {
+        height: 70px;
+      }
+      .gallery-arrow {
+        width: 24px;
+        height: 24px;
+        font-size: 1rem;
+      }
+      .top-address {
+        font-size: 1.1rem;
+      }
+      header {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav aria-label="Adresse">
+    <div class="top-address">
+      <span>ERLANGER STR 2 HÖCHSTADT</span>
+    </div>
+  </nav>
+
+  <header>
+    <h1>PANINI SOUVLAKI</h1>
+    <p>Vasilis</p>
+  </header>
+
+  <section class="gallery-wrapper" aria-label="Galerie mit Fotos und Videos">
+    <button class="gallery-arrow left" aria-label="Zurück">&#8592;</button>
+    <div class="media-gallery">
+      
+        <article class="media-item">
+        <img src="Pictures/BBilder/IMG-20250818-WA0001.jpg" alt="Gemütliche Atmosphäre im Restaurant" />
+        <div class="media-caption">Traditional Griechisch</div>
+      </article>
+
+
+      <article class="media-item">
+        <img src="Documents/04b5e6b3-9fe5-4961-a256-8f3c5c0641b3.jpg" alt="Leckeres Panini Souvlaki – Frisches Pita mit Souvlaki" />
+        <div class="media-caption">Köstliches Pita Souvlaki</div>
+      </article>
+
+
+      <article class="media-item">
+        <img src="Documents/Untitled.jpg" alt="Gemütliche Atmosphäre im Restaurant" />
+        <div class="media-caption">Frish & Handgemacht</div>
+      </article>
+
+<article class="media-item">
+        <img src="Documents/Untitled.png" alt="Gemütliche Atmosphäre im Restaurant" />
+        <div class="media-caption">Getränke</div>
+      </article>
+      
+    <button class="gallery-arrow right" aria-label="Weiter">&#8594;</button>
+  </section>
+
+</div>
+  </body>
+</body>
+  <script>
+    // Scrolls the gallery left/right by one item width
+    document.addEventListener('DOMContentLoaded', function () {
+      const gallery = document.querySelector('.media-gallery');
+      const leftBtn = document.querySelector('.gallery-arrow.left');
+      const rightBtn = document.querySelector('.gallery-arrow.right');
+      function getItemWidth() {
+        const item = gallery.querySelector('.media-item');
+        const style = window.getComputedStyle(item);
+        return item.offsetWidth + parseInt(style.marginRight || 0) + parseInt(style.marginLeft || 0) + 15;
+      }
+      leftBtn.addEventListener('click', () => {
+        gallery.scrollBy({ left: -getItemWidth(), behavior: 'smooth' });
+      });
+      rightBtn.addEventListener('click', () => {
+        gallery.scrollBy({ left: getItemWidth(), behavior: 'smooth' });
+      });
+    });
+  </script>
+
+  <main>
+    <section id="menu" class="menu-section">
+      <h2>PREISLISTE</h2>
+      <div class="menu-item">
+        <span>
+          <strong>Souvlaki in Pita</strong>
+          <span style="display:block; font-size:0.95rem; color:#e6a43c; font-weight:400; margin-top:2px;">
+            Tomate, Pommes, Zwiebel, Tzatziki, Gewürze, Souvlaki (Schwein oder Hähnchen)
+          </span>
+        </span>
+        <span>€6,50</span>
+      </div>
+      <div class="menu-item">
+        <span>
+          <strong>Souvlaki in Panini</strong>
+          <span style="display:block; font-size:0.95rem; color:#e6a43c; font-weight:400; margin-top:2px;">
+            Tomate, Pommes, Zwiebel, Tzatziki, Gewürze, Souvlaki (Schwein oder Hähnchen)
+          </span>
+        </span>
+        <span>€6,50</span>
+      </div>
+      
+      
+      
+
+      <div class="menu-item">
+        <span>
+          <strong>Extra Beilage</strong>
+          <span style="display:block; font-size:0.95rem; color:#e6a43c; font-weight:400; margin-top:2px;">Pita Brot
+          </span>
+        </span>
+
+        <span>€1,50</span>
+      </div>
+      
+      <div class="menu-item">
+        <span>
+          <strong>Souvlaki Spieß</strong>
+          <span style="display:block; font-size:0.95rem; color:#e6a43c; font-weight:400; margin-top:2px;">
+          </span>
+        </span>
+
+        <span>€3,00</span>
+      </div>
+
+      <div class="menu-item">
+        <span>
+          <strong>3 im Weckla</strong>
+          <span style="display:block; font-size:0.95rem; color:#e6a43c; font-weight:400; margin-top:2px;">
+          </span>
+        </span>
+
+        <span>€4,50</span>
+      </div>
+      
+
+      <div class="menu-item">
+        <span>
+          <strong>Vegetarisch</strong>
+          <span style="display:block; font-size:0.95rem; color:#e6a43c; font-weight:400; margin-top:2px;">Pita mit Pommes, Tomate, Zwiebel, Tzatziki
+          </span>
+        </span>
+
+        <span>€5,00</span>
+      </div>
+
+    
+
+      <div class="menu-item">
+        <span>
+          <strong>Souvlaki Spieß</strong>
+          <span style="display:block; font-size:0.95rem; color:#e6a43c; font-weight:400; margin-top:2px;">
+          </span>
+        </span>
+
+        <span>€3,00</span>
+      </div>
+
+      <h2>BEILAGEN UND EXTRAS</h2>
+
+      <div class="menu-item">
+        <span>
+          <strong>Tzatziki-dip</strong>
+          <span style="display:block; font-size:0.95rem; color:#e6a43c; font-weight:400; margin-top:2px;">Handgemacht, Perfekt zu Souvlaki und Panini.
+          </span>
+        </span>
+
+        <span>€3,50</span>
+      </div>
+
+<div class="menu-item">
+        <span>
+          <strong>Pommes Frites</strong>
+          <span style="display:block; font-size:0.95rem; color:#e6a43c; font-weight:400; margin-top:2px;">
+          </span>
+        </span>
+
+        <span>€4,00</span>
+      </div>
+      
+      <div class="menu-item">
+        <span>
+          <strong>Frische Pitas oder Paninis</strong>
+          <span style="display:block; font-size:0.95rem; color:#e6a43c; font-weight:400; margin-top:2px;">Ideal zum Dippen und als Beilage
+          </span>
+        </span>
+
+        <span>€1,50</span>
+      </div>
+
+      <h2>GETRÄNKE</h2>
+<div class="menu-item">
+        <span>
+          <strong>Wasser</strong>
+          <span style="display:block; font-size:0.95rem; color:#e6a43c; font-weight:400; margin-top:2px;">
+          </span>
+        </span>
+
+        <span>€2,50</span>
+      </div>
+      <div class="menu-item">
+        <span>
+          <strong>Cola/Spezi</strong>
+          <span style="display:block; font-size:0.95rem; color:#e6a43c; font-weight:400; margin-top:2px;">
+          </span>
+        </span>
+
+        <span>€3,00</span>
+      </div>
+      <div class="menu-item" style="font-weight: 900; color: #ffb74d;">
+        <span>
+          <strong>Spezial Angebot Menü</strong>
+          <span style="display:block; font-size:0.95rem; color:#e6a43c; font-weight:400; margin-top:2px;">
+            Souvlaki (Pita oder Panini) + Getränk nach Wahl + Pommes
+          </span>
+        <span>€10,00</span>
+      
+      </div>
+      
+      <p style="color: #e6a43c; font-style: italic; max-width: 450px; margin-top: -15px;">
+      </p>
+    </section>
+
+    <section id="timetable" class="timetable-container" tabindex="0" aria-label="Öffnungszeiten Tabelle">
+      <h2>Öffnungszeiten</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Tag</th>
+            <th>Öffnungszeit</th>
+            <th>Schließzeit</th>
+          <tr><td>Montag</td><td>12:00</td><td>20:00</td></tr>
+          <tr><td>Dienstag</td><td>12:00</td><td>20:00</td></tr>
+          <tr><td>Mittwoch</td><td>geschlossen</td><td>geschlossen</td></tr>
+          <tr><td>Donnerstag</td><td>12:00</td><td>20:00</td></tr>
+          <tr><td>Freitag</td><td>12:00</td><td>20:00</td></tr>
+          <tr><td>Samstag</td><td>12:00</td><td>20:00</td></tr>
+          <tr><td>Sonntag</td><td>geschlossen</td><td>geschlossen</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section style="border: 2px solid #d97f00;max-width: 900px; margin: 30px auto; padding: 20px; background-color: #424040; border-radius: 8px; color: #e99a24; font-size: 1.4rem; text-align: center; box-shadow: 0 0 10px rgba(255, 160, 17, 0.5);">
+      <p>
+        Komm vorbei und genieße unser köstliches Souvlaki </p>
+        <p>oder</p>
+        Anrufen, Bestellen und abholen!</p>
+    </section>
+
+    <section id="contact" class="contact-section" style="max-width: 900px; margin: 0 auto 50px; padding: 0 20px; color: #d97f00;">
+      <h2>Kontakt</h2>
+      <p>Email: <a href="mailto:info.paninisouvlaki@gmail.com" style="color: #d97f00; text-decoration: underline;">info.paninisouvlaki@gmail.com</a></p>
+      <p>Telefon: <a href="tel:15750850787" style="color: #d97f00; text-decoration: underline;">15750850787</a></p>
+      <address>
+        Adresse: ERLANGER STR 2, HÖCHSTADT
+      </address>
+    </section>
+  
+    <!-- Google Maps Embed -->
+    <section style="max-width:900px; margin:0 auto 20px; ">
+      <h2 style="color:#ffb74d; text-align:center;">Finde uns</h2>
+      <a href="https://www.google.com/maps/place/Erlanger+Str.+2,+91315+H%C3%B6chstadt" target="_blank" rel="noopener">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5161.368900407593!2d10.80485321241461!3d49.69791484114225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a21ac016bf4987%3A0x87c02fd8ab1b699c!2sErlanger%20Str.%202%2C%2091315%20H%C3%B6chstadt!5e0!3m2!1sen!2sde!4v1755060610867!5m2!1sen!2sde"
+          width="100%" height="450" style="border:2px solid #d97f00; border-radius:8px;"
+          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          title="Google Maps Standort PANINI SOUVLAKI"></iframe>
+      </a>
+    </section>
+  </main>
+</body>
+<!-- ...existing
+  </main>
+</body> 
